@@ -1,0 +1,26 @@
+{
+  "name": "codemash-reactjs",
+  "version": "0.0.1",
+  "description": "test, prototype, codemash 2016, react",
+  "main": "index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/or9/codemash-reactjs.git"
+  },
+  "keywords": [
+    "test",
+    "prototype",
+    "codemash",
+    "2016",
+    "react"
+  ],
+  "author": "durmon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/or9/codemash-reactjs/issues"
+  },
+  "homepage": "https://github.com/or9/codemash-reactjs#readme"
+}
