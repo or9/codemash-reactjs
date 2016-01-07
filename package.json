@@ -4,7 +4,9 @@
   "description": "test, prototype, codemash 2016, react",
   "main": "index.html",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "prestart": "browserify -t [ babelify --presets [ react ] ] src/index.js -o dist/bundle.js",
+    "start": "python -m SimpleHTTPServer"
   },
   "repository": {
     "type": "git",
@@ -22,5 +24,11 @@
   "bugs": {
     "url": "https://github.com/or9/codemash-reactjs/issues"
   },
-  "homepage": "https://github.com/or9/codemash-reactjs#readme"
+  "homepage": "https://github.com/or9/codemash-reactjs#readme",
+  "dependencies": {
+    "babel-preset-react": "^6.3.13",
+    "babelify": "^7.2.0",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6"
+  }
 }
