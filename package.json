@@ -1,13 +1,14 @@
 {
   "name": "codemash-reactjs",
   "version": "0.0.1",
-  "description": "test, prototype, codemash 2016, react",
+  "description": "React webapp",
   "main": "index.html",
   "scripts": {
     "test": "test",
-    "prestart": "gulp",
+    "prestart": "",
     "start": "browserify -t [ babelify --presets [ react ] ] src/index.js -o dist/index.js -d",
-    "poststart": "python -m SimpleHTTPServer"
+    "poststart": "",
+    "serve": "python -m SimpleHTTPServer"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
   "dependencies": {
     "babel-preset-react": "^6.3.13",
     "babelify": "^7.2.0",
+    "marked": "^0.3.5",
     "react": "^0.14.6",
     "react-dom": "^0.14.6"
   },
