@@ -1,6 +1,7 @@
 var React = require("react");
 var ReactDOM = require("react-dom");
 var marked = require("marked");
+var CommentForm = require("./CommentForm");
 
 var mockData = [
 	{ id: 1, author: "Super Auth", text: "This is one comment" },
@@ -20,9 +21,11 @@ var Comment = React.createClass({
 	rawMarkup: rawmarkup
 });
 
+/*
 var CommentForm = React.createClass({
 	render: renderCommentForm
 });
+*/
 
 ReactDOM.render(
 	<h1>Hello again, world.</h1>,
@@ -57,7 +60,7 @@ function renderComment () {
 			</h2>
 
 			<span dangerouslySetInnerHTML={ this.rawMarkup() } />
-			//{ marked(this.props.children.toString()) }
+			{ marked(this.props.children.toString()) }
 
 		</div>
 	);
