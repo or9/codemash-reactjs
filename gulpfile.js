@@ -13,7 +13,7 @@ function copyHtmlTask () {
 }
 
 function copyTask () {
-	return gulp.src(["css/**"], { base: "./" })
+	return gulp.src(["css/**", "api/**/*.json"], { base: "./" })
 		.pipe(gulp.dest("dist/"));
 }
 

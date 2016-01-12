@@ -1,0 +1,9 @@
+[{ 
+	"id": 1, 
+	"author": "Me Author", 
+	"text": "This is one comment" 
+}, { 
+	"id": 2, 
+	"author": "Anonymous", 
+	"text": "Some other comment" 
+}]

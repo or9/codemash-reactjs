@@ -6,7 +6,8 @@ module.exports = React.createClass({
 });
 
 function render () {
-	var commentNodes = this.props.data.map(mapCommentNodes);
+	var data = this.props.data || [];
+	var commentNodes = data.map(mapCommentNodes);
 
 	return (
 		<div className="commentList">

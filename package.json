@@ -5,10 +5,10 @@
   "main": "index.html",
   "scripts": {
     "test": "test",
-    "prestart": "",
+    "prestart": "gulp",
     "start": "browserify -t [ babelify --presets [ react ] ] src/index.js -o dist/index.js -d",
     "poststart": "",
-    "serve": "python -m SimpleHTTPServer"
+    "serve": "cd dist && python -m SimpleHTTPServer"
   },
   "repository": {
     "type": "git",
