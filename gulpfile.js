@@ -22,7 +22,7 @@ function watchTask () {
 }
 
 function buildTask () {
-	exec("npm start", output);
+	//exec("npm start", output);
 
 	function output (err, stdout, stderr) {
 		console.log(stdout);

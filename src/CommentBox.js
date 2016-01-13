@@ -7,8 +7,18 @@ module.exports = React.createClass({
 	componentDidMount: componentDidMount,
 	loadCommentsFromServer: loadCommentsFromServer,
 	pollInterval: 2000,
-	render: renderClass
+	render: renderClass,
+	handleCommentSubmit: handleCommentSubmit
 });
+
+function handleCommentSubmit (comment) {
+	// fake it
+	var comments = this.state.data;
+	comment.id = new Date().getTime();
+	var newComments = comments.concat([comment]);
+	this.setState({ data: newComments });
+	sessionStorage.setItem("comments.json", JSON.stringify(newComments));
+}
 
 function componentDidMount () {
 	this.loadCommentsFromServer();
@@ -16,6 +26,12 @@ function componentDidMount () {
 }
 
 function loadCommentsFromServer () {
+	var sessionData = sessionStorage.getItem("comments.json");
+	if (sessionData) {
+		sessionData = JSON.parse(sessionData);
+		return this.setState({ data: sessionData });
+	}
+
 	var xhr = new XMLHttpRequest();
 	xhr.open("GET", this.props.url, true);
 	xhr.onload = dataLoaded.bind(this);
@@ -25,6 +41,7 @@ function loadCommentsFromServer () {
 
 function dataLoaded (xhr) {
 	var data = JSON.parse(xhr.target.responseText);
+	sessionStorage.setItem("comments.json", xhr.target.responseText);
 	this.setState({data: data});
 }
 
@@ -40,7 +57,7 @@ function renderClass () {
 			<CommentList 
 				data={ this.state.data } />
 
-			<CommentForm />
+			<CommentForm onCommentSubmit={ this.handleCommentSubmit } />
 		</div>
 	);
 }
